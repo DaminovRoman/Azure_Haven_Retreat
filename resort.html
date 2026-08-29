@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azure Haven Retreat — Курорт на границе воды и тишины</title>
+<meta name="description" content="Azure Haven Retreat — приватный курорт среди скал и океана. Виллы с панорамным видом, персональный консьерж, авторская гастрономия и wellness-ритуалы.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Azure Haven Retreat">
+<meta property="og:description" content="Курорт на границе воды и тишины. Приватные виллы, авторская гастрономия, wellness среди скал.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/1.png">
+<meta property="og:locale" content="ru_RU">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,340;9..144,440&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="resort.css">
+
+<!-- Schema.org: Hotel -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Resort",
+  "name": "Azure Haven Retreat",
+  "description": "Приватный пятизвёздочный курорт на границе океана и скал.",
+  "starRating": { "@type": "Rating", "ratingValue": "5" },
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Приватный консьерж 24/7" },
+    { "@type": "LocationFeatureSpecification", "name": "Спа и wellness-ритуалы" },
+    { "@type": "LocationFeatureSpecification", "name": "Авторская гастрономия" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "/" },
+    { "@type": "ListItem", "position": 2, "name": "Azure Haven Retreat", "item": "/" }
+  ]
+}
+</script>
+</head>
+<body class="is-loading">
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Загрузка страницы">
+  <div class="preloader-field" aria-hidden="true">
+    <span class="preloader-grain"></span>
+  </div>
+  <div class="preloader-inner">
+    <div class="preloader-mark" aria-hidden="true">
+      <svg class="preloader-sun" width="96" height="96" viewBox="0 0 96 96" fill="none">
+        <defs>
+          <linearGradient id="sunGrad" x1="48" y1="14" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#E7C888"/>
+            <stop offset="1" stop-color="#B99B5C"/>
+          </linearGradient>
+          <linearGradient id="reflectGrad" x1="48" y1="48" x2="48" y2="70" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#B99B5C" stop-opacity="0.5"/>
+            <stop offset="1" stop-color="#B99B5C" stop-opacity="0"/>
+          </linearGradient>
+          <clipPath id="waterClip">
+            <rect x="0" y="48" width="96" height="48" />
+          </clipPath>
+          <clipPath id="skyClip">
+            <rect x="0" y="0" width="96" height="48" />
+          </clipPath>
+        </defs>
+
+        <!-- orbit ring, the quiet architecture around the mark -->
+        <circle class="preloader-orbit" cx="48" cy="48" r="43" />
+
+        <!-- horizon -->
+        <line class="preloader-horizon" x1="8" y1="48" x2="88" y2="48" />
+
+        <!-- sun disc, rises from below the horizon; clipped to the sky so only the upper half ever shows -->
+        <g class="preloader-sun-rise" clip-path="url(#skyClip)">
+          <circle class="preloader-sun-core" cx="48" cy="48" r="14" fill="url(#sunGrad)" />
+        </g>
+
+        <!-- reflection on the water, clipped below the horizon -->
+        <g clip-path="url(#waterClip)">
+          <circle class="preloader-sun-reflection" cx="48" cy="48" r="14" fill="url(#reflectGrad)" />
+          <line class="preloader-ripple" x1="30" y1="64" x2="66" y2="64" />
+          <line class="preloader-ripple preloader-ripple-2" x1="24" y1="72" x2="72" y2="72" />
+        </g>
+      </svg>
+    </div>
+    <p class="preloader-word">
+      <span>A</span><span>z</span><span>u</span><span>r</span><span>e</span><span class="pw-gap"></span><span>H</span><span>a</span><span>v</span><span>e</span><span>n</span>
+    </p>
+    <p class="preloader-caption" aria-hidden="true">Курорт на границе воды и тишины</p>
+    <div class="preloader-bar" aria-hidden="true">
+      <span class="preloader-bar-fill" id="preloader-bar-fill"></span>
+    </div>
+    <span class="preloader-percent" id="preloader-percent" aria-hidden="true">0</span>
+  </div>
+</div>
+
+<!-- горизонт — сквозная сигнатурная линия, проходит через весь сайт -->
+<div class="horizon-line" aria-hidden="true"></div>
+
+<!-- индикатор прогресса прочтения страницы -->
+<div class="scroll-progress" aria-hidden="true"><span class="scroll-progress-fill" id="scroll-progress-fill"></span></div>
+
+<a class="skip-link" href="#main">Перейти к содержанию</a>
+
+<header class="site-header" data-reveal>
+  <div class="header-inner">
+    <span class="wordmark">Azure Haven</span>
+    <nav class="primary-nav" aria-label="Основная навигация" id="primary-nav">
+      <span class="wordmark nav-wordmark">Azure Haven</span>
+      <a href="#philosophy">Философия</a>
+      <a href="#residences">Виллы</a>
+      <a href="#experience">Впечатления</a>
+      <a href="#gastronomy">Гастрономия</a>
+      <a href="#contact">Контакты</a>
+      <a class="nav-cta nav-cta-mobile magnetic" href="#booking">Забронировать</a>
+    </nav>
+    <a class="nav-cta magnetic" href="#booking">Забронировать</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="primary-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-media" aria-hidden="true" data-parallax data-parallax-speed="0.35">
+      <div class="hero-gradient"></div>
+      <img
+        class="hero-image"
+        src="img/1.png"
+        alt=""
+        fetchpriority="high">
+    </div>
+    <div class="hero-content">
+      <p class="eyebrow">Azure Haven Retreat</p>
+      <h1 class="hero-title">
+        <span class="line">Место,</span>
+        <span class="line">где время</span>
+        <span class="line">принадлежит</span>
+        <span class="line"><em>только вам.</em></span>
+      </h1>
+      <p class="hero-subtitle">
+        Курорт среди скал и океана — для тех, кто выбирает
+        тишину вместо расписания.
+      </p>
+      <div class="hero-actions">
+        <a href="#philosophy" class="btn btn-ghost magnetic">
+          <span>Начать путешествие</span>
+        </a>
+        <a href="#booking" class="btn btn-solid magnetic">
+          <span>Забронировать виллу</span>
+        </a>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- ============ 2. ФИЛОСОФИЯ ============ -->
+  <section class="philosophy" id="philosophy">
+    <div class="philosophy-grid">
+      <div class="philosophy-text" data-reveal>
+        <p class="eyebrow">Философия</p>
+        <h2>Мы не строили курорт.<br>Мы освободили место для тишины.</h2>
+        <p class="lede">
+          Когда архитекторы впервые пришли на этот берег, здесь не было
+          ничего, кроме камня, ветра и линии горизонта. Решение было
+          простым: не спорить с этим местом, а слушать его.
+        </p>
+        <div class="philosophy-rituals">
+          <div class="ritual" data-reveal>
+            <span class="ritual-mark">Рассвет</span>
+            <p>Виллы развёрнуты так, что первый свет дня всегда приходит первым к вам, а не к соседней террасе.</p>
+          </div>
+          <div class="ritual" data-reveal>
+            <span class="ritual-mark">Материал</span>
+            <p>Камень добыт в этой же долине. Дерево состарено морским воздухом, а не морилкой.</p>
+          </div>
+          <div class="ritual" data-reveal>
+            <span class="ritual-mark">Дистанция</span>
+            <p>Между виллами — не заборы, а рельеф. Соседей не видно, но всегда слышен океан.</p>
+          </div>
+        </div>
+      </div>
+      <div class="philosophy-media" data-reveal>
+        <div class="parallax-inner" data-parallax data-parallax-speed="0.15">
+          <img src="img/2.png" alt="Архитектура курорта среди скал" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2.5 NUMBERS ============ -->
+  <section class="numbers" id="numbers">
+    <div class="numbers-grid">
+      <div class="stat" data-reveal>
+        <span class="stat-value" data-count-to="23" data-suffix="">0</span>
+        <span class="stat-label">Гектара тишины</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat-value" data-count-to="4" data-suffix="">0</span>
+        <span class="stat-label">Типа резиденций</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat-value" data-count-to="12" data-suffix=" км">0</span>
+        <span class="stat-label">До источника продуктов</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat-value" data-count-to="24" data-suffix="/7">0</span>
+        <span class="stat-label">Персональный консьерж</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. VILLAS & SUITES ============ -->
+  <section class="residences" id="residences">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Резиденции</p>
+      <h2>Четыре способа быть наедине с горизонтом</h2>
+    </div>
+
+    <div class="residence-gallery">
+      <article class="residence-card" data-reveal>
+        <div class="residence-media">
+          <img src="img/3.png" alt="Океанская резиденция — вилла с видом на океан" loading="lazy">
+        </div>
+        <div class="residence-info">
+          <h3>Океанская резиденция</h3>
+          <p class="residence-meta">150 м² · вид на океан</p>
+          <p>Приватный бассейн выходит за линию террасы — граница воды и горизонта здесь стирается намеренно.</p>
+        </div>
+      </article>
+
+      <article class="residence-card" data-reveal>
+        <div class="residence-media">
+          <img src="img/4.png" alt="Скальная вилла — вилла на скале" loading="lazy">
+        </div>
+        <div class="residence-info">
+          <h3>Скальная вилла</h3>
+          <p class="residence-meta">210 м² · скальный выступ</p>
+          <p>Единственная резиденция курорта, построенная на естественном скальном козырьке — без единой опоры под террасой.</p>
+        </div>
+      </article>
+
+      <article class="residence-card" data-reveal>
+        <div class="residence-media">
+          <img src="img/5.png" alt="Садовый павильон — павильон среди зелени" loading="lazy">
+        </div>
+        <div class="residence-info">
+          <h3>Садовый павильон</h3>
+          <p class="residence-meta">120 м² · закрытый сад</p>
+          <p>Единственное жильё курорта, откуда океан не виден вовсе — только шум за стеной зелени.</p>
+        </div>
+      </article>
+
+      <article class="residence-card" data-reveal>
+        <div class="residence-media">
+          <img src="img/6.png" alt="Люкс «Горизонт» — люкс с панорамным видом" loading="lazy">
+        </div>
+        <div class="residence-info">
+          <h3>Люкс «Горизонт»</h3>
+          <p class="residence-meta">95 м² · панорама 270°</p>
+          <p>Стеклянный угол без единой рамы — стекло здесь несущее, а не декоративное.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 4. EXPERIENCE ============ -->
+  <section class="experience" id="experience">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Впечатления</p>
+      <h2>Шесть сцен одного дня</h2>
+    </div>
+
+    <div class="scene-list">
+      <div class="scene" data-reveal>
+        <span class="scene-index">Приватный ужин</span>
+        <p>Стол накрывают там, где вы укажете — на скале, в бухте или в вашем собственном саду.</p>
+      </div>
+      <div class="scene" data-reveal>
+        <span class="scene-index">Спа-ритуалы</span>
+        <p>Программа строится вокруг фаз прилива, а не расписания персонала.</p>
+      </div>
+      <div class="scene" data-reveal>
+        <span class="scene-index">Океан</span>
+        <p>Дайвинг у рифа, который курорт закрыл для промышленного лова ещё до открытия отеля.</p>
+      </div>
+      <div class="scene" data-reveal>
+        <span class="scene-index">Горы</span>
+        <p>Треккинг с гидом, выросшим в этой долине — маршруты нигде не опубликованы.</p>
+      </div>
+      <div class="scene" data-reveal>
+        <span class="scene-index">Гастрономия</span>
+        <p>Меню меняется каждое утро — вслед за тем, что принесли рыбаки и садовники.</p>
+      </div>
+      <div class="scene" data-reveal>
+        <span class="scene-index">Закат</span>
+        <p>Один вечер в неделю курорт гасит внешнее освещение целиком — остаётся только небо.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. GASTRONOMY ============ -->
+  <section class="gastronomy" id="gastronomy">
+    <div class="gastronomy-media" data-reveal>
+      <div class="parallax-inner" data-parallax data-parallax-speed="0.15">
+        <img src="img/7.png" alt="Сервировка авторского ужина" loading="lazy">
+      </div>
+    </div>
+    <div class="gastronomy-text" data-reveal>
+      <p class="eyebrow">Гастрономия</p>
+      <h2>Кухня без меню на бумаге</h2>
+      <p class="lede">
+        Шеф выходит к столу лично — не для церемонии, а потому что блюдо
+        объясняется проще, чем описывается.
+      </p>
+      <ul class="fact-list">
+        <li>90% продуктов — в пределах 12 км от кухни</li>
+        <li>Дегустационный стол — на 6 гостей, не больше</li>
+        <li>Винный погреб курируется одним сомелье с 2014 года</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 6. WELLNESS ============ -->
+  <section class="wellness" id="wellness">
+    <div class="wellness-inner">
+      <p class="eyebrow" data-reveal>Велнес</p>
+      <h2 data-reveal>Пространство, где ничего не нужно решать</h2>
+      <div class="wellness-media" data-reveal>
+        <div class="parallax-inner" data-parallax data-parallax-speed="0.12">
+          <img src="img/8.png" alt="Спа-пространство курорта" loading="lazy">
+        </div>
+      </div>
+      <p class="wellness-note" data-reveal>
+        Терапевт задаёт один вопрос перед началом: тишина или музыка.
+        Больше решений в этом крыле курорта от вас не потребуется.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 7. WHY GUESTS CHOOSE US ============ -->
+  <section class="reasons" id="reasons">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Детали, которые остаются в памяти</p>
+      <h2>Не обещания. Порядок действий.</h2>
+    </div>
+    <div class="reasons-grid">
+      <div class="reason" data-reveal>
+        <h3>Консьерж 24/7</h3>
+        <p>Один и тот же человек ведёт ваше пребывание от заезда до отъезда — не смена операторов на ресепшене.</p>
+      </div>
+      <div class="reason" data-reveal>
+        <h3>Приватный трансфер</h3>
+        <p>Катер или вертолёт — без пересадок и залов ожидания с момента приземления в регионе.</p>
+      </div>
+      <div class="reason" data-reveal>
+        <h3>Вилла готова заранее</h3>
+        <p>Температура воды в бассейне, освещение и аромат в комнате настраиваются под ваш профиль ещё до прибытия.</p>
+      </div>
+      <div class="reason" data-reveal>
+        <h3>Маршруты без публикации</h3>
+        <p>Тропы и точки для дайвинга не отмечены на картах курорта намеренно — только гид знает дорогу.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8. GUEST STORIES ============ -->
+  <section class="stories" id="stories">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Истории гостей</p>
+      <h2>То, что помнят спустя годы</h2>
+    </div>
+    <div class="stories-row">
+      <blockquote class="story" data-reveal>
+        <p>Мы приехали на четыре дня. Уехали через одиннадцать — просто не смогли назначить дату отъезда раньше.</p>
+        <cite>Семья из Цюриха, Скальная вилла</cite>
+      </blockquote>
+      <blockquote class="story" data-reveal>
+        <p>Впервые за много лет я не проверял телефон по утрам. Здесь для этого просто не было повода.</p>
+        <cite>Гость Океанской резиденции</cite>
+      </blockquote>
+      <blockquote class="story" data-reveal>
+        <p>Шеф запомнил, что я не ем кинзу — и больше об этом никто не спрашивал за все семь дней.</p>
+        <cite>Пара, Люкс «Горизонт»</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============ 9. GALLERY ============ -->
+  <section class="gallery" id="gallery">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Курорт</p>
+      <h2>Двадцать три гектара тишины</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-cell g-1" data-reveal>
+        <img src="img/9.png" alt="Терраса виллы на закате" loading="lazy" data-parallax data-parallax-speed="0.08">
+      </div>
+      <div class="g-cell g-2" data-reveal>
+        <img src="img/10.png" alt="Приватный бассейн" loading="lazy" data-parallax data-parallax-speed="-0.06">
+      </div>
+      <div class="g-cell g-3" data-reveal>
+        <img src="img/11.png" alt="Скалистый берег курорта" loading="lazy" data-parallax data-parallax-speed="0.1">
+      </div>
+      <div class="g-cell g-4" data-reveal>
+        <img src="img/12.png" alt="Интерьер виллы" loading="lazy" data-parallax data-parallax-speed="-0.08">
+      </div>
+      <div class="g-cell g-5" data-reveal>
+        <img src="img/13.png" alt="Архитектура среди природы" loading="lazy" data-parallax data-parallax-speed="0.06">
+      </div>
+      <div class="g-cell g-6" data-reveal>
+        <img src="img/14.png" alt="Вид на океан со смотровой площадки" loading="lazy" data-parallax data-parallax-speed="-0.05">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 10. BOOKING CTA ============ -->
+  <section class="booking" id="booking">
+    <div class="booking-media" aria-hidden="true">
+      <div class="parallax-inner" data-parallax data-parallax-speed="0.25">
+        <img src="img/15.png" alt="">
+      </div>
+      <div class="booking-overlay"></div>
+    </div>
+    <div class="booking-content" data-reveal>
+      <h2>Ваше место среди тишины<br>уже ждёт вас.</h2>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-solid magnetic">
+          <span>Забронировать резиденцию</span>
+        </a>
+        <a href="#contact" class="btn btn-ghost-light magnetic">
+          <span>Связаться с консьержем</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11. CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="contact-grid">
+      <div class="contact-info" data-reveal>
+        <p class="eyebrow">Контакты</p>
+        <h2>Консьерж на связи ежедневно</h2>
+        <dl class="contact-details">
+          <div>
+            <dt>Телефон</dt>
+            <dd><a href="tel:+70000000000">+7 (000) 000-00-00</a></dd>
+          </div>
+          <div>
+            <dt>Почта</dt>
+            <dd><a href="mailto:concierge@azurehaven.retreat">concierge@azurehaven.retreat</a></dd>
+          </div>
+          <div>
+            <dt>Мессенджеры</dt>
+            <dd>WhatsApp · Telegram</dd>
+          </div>
+        </dl>
+      </div>
+      <form class="contact-form" data-reveal aria-label="Форма бронирования">
+        <div class="form-row">
+          <label for="name">Имя</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Почта</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="form-row">
+          <label for="dates">Предполагаемые даты</label>
+          <input id="dates" name="dates" type="text" placeholder="напр. 12–19 сентября">
+        </div>
+        <div class="form-row">
+          <label for="message">Пожелания</label>
+          <textarea id="message" name="message" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-solid magnetic">
+          <span>Отправить запрос</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span class="wordmark">Azure Haven</span>
+  <p>© 2026 Azure Haven Retreat. Все права защищены.</p>
+</footer>
+
+<script src="resort.js"></script>
+</body>
+</html>
